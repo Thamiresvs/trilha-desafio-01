@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Status do Guerreiro</title>
+    <script>
+        function verificarStatus() {
+            // Obtém o valor do input
+            let xp = parseInt(document.getElementById("xpInput").value);
+            let resultado;
+
+            // Estrutura de decisão para verificar a quantidade de experiência
+            if (xp < 1000) {
+                resultado = "Possui ferro.";
+            } else if (xp >= 1001 && xp <= 2000) {
+                resultado = "Possui bronze.";
+            } else if (xp >= 2001 && xp <= 5000) {
+                resultado = "Possui prata e ouro.";
+            } else if (xp >= 5001 && xp <= 8000) {
+                resultado = "Possui platina e diamante.";
+            } else if (xp >= 8001 && xp <= 9000) {
+                resultado = "É ascendente.";
+            } else if (xp >= 9001 && xp <= 10000) {
+                resultado = "É imortal.";
+            } else if (xp >= 10001) {
+                resultado = "É radiante.";
+            } else {
+                resultado = "XP inválido.";
+            }
+
+            // Exibe o resultado na tela
+            document.getElementById("resultado").innerText = resultado;
+        }
+    </script>
+</head>
+<body>
+    <h1>Status do Guerreiro</h1>
+    <label for="xpInput">Digite a quantidade de experiência (XP):</label>
+    <input type="number" id="xpInput" />
+    <button onclick="verificarStatus()">Verificar</button>
+
+    <h2 id="resultado"></h2>
+</body>
+</html>
